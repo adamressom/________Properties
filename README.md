@@ -1,9 +1,15 @@
-Property Group Template
+Property Group Template 🏡𓂃⋆｡
 
 A starter website for real estate teams, property groups, and developers.
 
-You get property listings, property detail pages, a team page, contact forms, email signups, saved favorites, and admin protected lead data.
+╭─ ⟡ ─ 𖤐 ─ ◌ ─ ⌂ ─ ⧉ ─ ✦ ─ ⌁ ─ 𓇼 ─ ⌁ ─ ✦ ─ ⧉ ─ ⌂ ─ ◌ ─ 𖤐 ─ ⟡ ─╮
 
-The backend runs on Convex. Auth runs through WorkOS AuthKit. The app also includes input validation, rate limiting, auth checks, and browser security headers.
+🛠️ Built with Next.js, Convex, WorkOS AuthKit, React, and TypeScript.
 
-Use it as a base. Replace the template content, add your environment variables, set your admin email, and ship your own property site.
+🗝️ Includes property listings, detail pages, team profiles, contact forms, email signups, saved favorites, and admin protected lead data.
+
+🔒 Adds input validation, rate limiting, auth checks, and browser security headers.
+
+🪴 Use it as a base. Replace the template content, add your environment variables, set your admin email, and ship your property site.
+
+╰─ ⟡ ─ 𖤐 ─ ◌ ─ ⌂ ─ ⧉ ─ ✦ ─ ⌁ ─ 𓇼 ─ ⌁ ─ ✦ ─ ⧉ ─ ⌂ ─ ◌ ─ 𖤐 ─ ⟡ ─╯
