@@ -4,61 +4,61 @@ import Link from "next/link";
 
 const featuredProperties = [
   {
-    image: "https://photos.zillowstatic.com/fp/6c2f8896921cc9410e711532777e190e-uncropped_scaled_within_1536_1152.webp",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
     badge: "For Rent · Featured",
     status: "open",
-    loc: "Lorton, VA",
-    name: "Laurel Ridge Townhome",
-    price: "$4,080/mo",
-    beds: "4 BD", baths: "4 BA", sqft: "1,800 SQFT",
+    loc: "Template City",
+    name: "Sample Townhome",
+    price: "$X,XXX/mo",
+    beds: "4 BD", baths: "4 BA", sqft: "X,XXX SQFT",
     href: "/properties/laurel-ridge-townhome",
   },
   {
     image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
     badge: "Luxury · Featured",
     status: "open",
-    loc: "McLean, VA",
-    name: "Ressom Estate at McLean",
-    price: "$1,200,000",
-    beds: "5 BD", baths: "4 BA", sqft: "4,200 SQFT",
-    href: "/properties/ressom-estate-mclean",
+    loc: "Template City",
+    name: "Example Estate",
+    price: "$X,XXX,XXX",
+    beds: "5 BD", baths: "4 BA", sqft: "X,XXX SQFT",
+    href: "/properties/example-estate",
   },
   {
     image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
     badge: "Residential · Featured",
     status: "open",
-    loc: "Fairfax, VA",
+    loc: "Template County",
     name: "Suburban Family Home",
-    price: "$735,000",
-    beds: "4 BD", baths: "3 BA", sqft: "2,950 SQFT",
+    price: "$XXX,XXX",
+    beds: "4 BD", baths: "3 BA", sqft: "X,XXX SQFT",
     href: "/properties/suburban-family-home",
   },
   {
     image: "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=1200&q=80",
     badge: "Luxury · Featured",
     status: "open",
-    loc: "Reston, VA",
+    loc: "Template City",
     name: "Mountain View Retreat",
-    price: "$1,450,000",
-    beds: "5 BD", baths: "4 BA", sqft: "4,850 SQFT",
+    price: "$X,XXX,XXX",
+    beds: "5 BD", baths: "4 BA", sqft: "X,XXX SQFT",
     href: "/properties/mountain-view-retreat",
   },
   {
     image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
     badge: "Mixed-Use · Featured",
     status: "closed",
-    loc: "Washington, D.C",
-    name: "Waterfront Estate Concept",
-    price: "Coming Q2 2026",
-    beds: "4 BD", baths: "3 BA", sqft: "3,900 SQFT",
+    loc: "Metro District",
+    name: "Waterfront Concept",
+    price: "Coming Soon",
+    beds: "4 BD", baths: "3 BA", sqft: "X,XXX SQFT",
     href: "/properties/waterfront-estate",
   },
 ];
 
 const recentActivity = [
-  { type: "New Listing", desc: "Laurel Ridge Townhome listed in Lorton, VA", time: "2 days ago", dot: "#22C55E" },
-  { type: "Under Review", desc: "Arlington Commons — offer stage", time: "1 week ago", dot: "#F59E0B" },
-  { type: "Coming Soon", desc: "Waterfront Estate Concept, Washington D.C.", time: "Q2 2026", dot: "#8A8078" },
+  { type: "New Listing", desc: "Sample Townhome listed in Template City", time: "Recently", dot: "#22C55E" },
+  { type: "Under Review", desc: "Urban Commons — offer stage", time: "In review", dot: "#F59E0B" },
+  { type: "Coming Soon", desc: "Waterfront Concept, Metro District", time: "Coming Soon", dot: "#8A8078" },
 ];
 
 export default function Home() {
@@ -80,31 +80,31 @@ export default function Home() {
   const p = featuredProperties[current];
 
   const properties = [
-    { badge: "Luxury", loc: "McLean, VA", name: "Ressom Estate at McLean", price: "$1,200,000", detail: "5 bd · 4 ba · 4,200 sqft", from: "#CBBFA8", to: "#A89880", size: "large", href: "/properties/ressom-estate-mclean", open: true },
-    { badge: "Affordable", loc: "Arlington, VA", name: "The Arlington Commons", price: "$485,000", detail: "3 bd · 2 ba · 1,800 sqft", from: "#B8C4CC", to: "#9AAAB4", size: "small", href: "/properties/arlington-commons", open: true },
-    { badge: "Mixed-Use", loc: "Alexandria, VA", name: "Ressom Quarter Alexandria", price: "Coming Q2 2026", detail: "Retail + Residential", from: "#C8B8A8", to: "#A89888", size: "small", href: "/properties/ressom-quarter-alexandria", open: false },
+    { badge: "Luxury", loc: "Template City", name: "Example Estate", price: "$X,XXX,XXX", detail: "5 bd · 4 ba · X,XXX sqft", from: "#CBBFA8", to: "#A89880", size: "large", href: "/properties/example-estate", open: true },
+    { badge: "Affordable", loc: "Template Borough", name: "Urban Commons", price: "$XXX,XXX", detail: "3 bd · 2 ba · X,XXX sqft", from: "#B8C4CC", to: "#9AAAB4", size: "small", href: "/properties/arlington-commons", open: true },
+    { badge: "Mixed-Use", loc: "Template Harbor", name: "Mixed-Use Quarter", price: "Coming Soon", detail: "Retail + Residential", from: "#C8B8A8", to: "#A89888", size: "small", href: "/properties/mixed-use-quarter", open: false },
   ];
 
   const team = [
-    { initials: "TR", name: "Tom Ressom", role: "Property Owner", bg: "#4A3F35", color: "#C4A882", phone: "+1 (703) 839-0823", email: "hwressom@gmail.com", linkedin: "https://www.linkedin.com/in/ressom/", instagram: "https://www.instagram.com/tomressom/" },
-    { initials: "MR", name: "Mike Ressom", role: "Property Owner", bg: "#354A47", color: "#82C4B8", phone: "+1 (202) 758-9876", email: "mike@ressomproperties.com", linkedin: null, instagram: null },
-    { initials: "MK", name: "Moke Ressom", role: "Property Owner", bg: "#3A354A", color: "#A882C4", phone: "+1 (703) 969-2792", email: "moke@ressomproperties.com", linkedin: null, instagram: null },
+    { initials: "JL", name: "Jordan Lee", role: "Property Owner", bg: "#4A3F35", color: "#C4A882", phone: "+1 (555) 010-0001", email: "founder@example.com", linkedin: "https://www.linkedin.com/", instagram: "https://www.instagram.com/" },
+    { initials: "CM", name: "Casey Morgan", role: "Property Owner", bg: "#354A47", color: "#82C4B8", phone: "+1 (555) 010-0002", email: "operations@example.com", linkedin: null, instagram: null },
+    { initials: "RP", name: "Riley Patel", role: "Property Owner", bg: "#3A354A", color: "#A882C4", phone: "+1 (555) 010-0003", email: "partner@example.com", linkedin: null, instagram: null },
   ];
 
-  const locations = ["Arlington", "Alexandria", "Fairfax", "Northeast DC", "Lorton", "Southeast DC", "Northwest DC"];
+  const locations = ["Template Borough", "Template Harbor", "Template County", "Northeast District", "Template Station", "Southeast District", "Northwest District"];
 
   const highlights = [
-    { icon: "🏡", title: "Family-Owned", desc: "Every decision made with family values at the core — no corporate middlemen." },
-    { icon: "📍", title: "Northern Virginia", desc: "Deep roots across Arlington, Alexandria, Fairfax, Lorton, and D.C." },
+    { icon: "🏡", title: "Team-Owned", desc: "Every decision made with team values at the core — no corporate middlemen." },
+    { icon: "📍", title: "Target Market", desc: "Deep roots across Template Borough, Template Harbor, Template County, Template Station, and Metro" },
     { icon: "🔑", title: "Full-Service", desc: "From development to leasing — we handle every step of the property journey." },
-    { icon: "💼", title: "15+ Years", desc: "Over a decade of trusted development and investment across the region." },
+    { icon: "💼", title: "10+ Years", desc: "Over a decade of trusted development and investment across the region." },
   ];
 
   const stats = [
-    { n: "15+", l: "Years of development" },
-    { n: "13", l: "Properties completed" },
-    { n: "$8M", l: "Portfolio value" },
-    { n: "100%", l: "Family owned & operated" },
+    { n: "10+", l: "Years of development" },
+    { n: "XX", l: "Properties completed" },
+    { n: "$XM", l: "Portfolio value" },
+    { n: "100%", l: "Team owned & operated" },
   ];
 
   const navLinks = [
@@ -140,8 +140,8 @@ export default function Home() {
       {/* NAV */}
       <nav style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "20px 44px", background: "rgba(248,245,240,0.90)", backdropFilter: "blur(20px)", borderBottom: "1px solid #EAE4DC", position: "sticky", top: 0, zIndex: 100 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 11 }}>
-          <div style={{ width: 36, height: 36, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", background: "#1A1A1A", color: "#F8F5F0", fontFamily: "'Cormorant Garamond', serif", fontSize: 16, fontWeight: 600 }}>RP</div>
-          <span className="serif" style={{ fontSize: 18, fontWeight: 500, letterSpacing: "0.06em" }}>Ressom Properties</span>
+          <div style={{ width: 36, height: 36, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", background: "#1A1A1A", color: "#F8F5F0", fontFamily: "'Cormorant Garamond', serif", fontSize: 16, fontWeight: 600 }}>PG</div>
+          <span className="serif" style={{ fontSize: 18, fontWeight: 500, letterSpacing: "0.06em" }}>Property Group</span>
         </div>
         <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 30 }}>
           {navLinks.map((l) => (
@@ -183,13 +183,13 @@ export default function Home() {
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 24 }}>
             <div style={{ width: 28, height: 1, background: "#C4A882" }} />
-            <span style={{ fontSize: 11, fontWeight: 500, color: "#8A8078", letterSpacing: "0.14em", textTransform: "uppercase" }}>Northern Virginia · Est. 2009</span>
+            <span style={{ fontSize: 11, fontWeight: 500, color: "#8A8078", letterSpacing: "0.14em", textTransform: "uppercase" }}>Target Market · Est. 20XX</span>
           </div>
           <h1 className="serif" style={{ fontSize: "clamp(44px,5vw,68px)", fontWeight: 400, lineHeight: 1.05, marginBottom: 20, letterSpacing: "-0.02em" }}>
             Where <em style={{ color: "#C4A882" }}>Legacy</em><br />Meets Modern<br />Living
           </h1>
           <p style={{ fontSize: 15, color: "#8A8078", lineHeight: 1.8, maxWidth: 400, marginBottom: 36, fontWeight: 300 }}>
-            A family-built portfolio of luxury, affordable, and mixed-use properties across Northern Virginia, crafted with intention, built to endure.
+            A template portfolio of luxury, affordable, and mixed-use properties across Target Market, crafted with intention, built to endure.
           </p>
           <div style={{ display: "flex", gap: 12, marginBottom: 40 }}>
             <Link href="/properties" style={{ fontSize: 13, fontWeight: 500, background: "#1A1A1A", color: "#F8F5F0", borderRadius: 10, padding: "14px 30px", textDecoration: "none", display: "inline-flex", alignItems: "center" }}>Explore Properties</Link>
@@ -201,11 +201,11 @@ export default function Home() {
                 <div key={t.name} style={{ width: 32, height: 32, borderRadius: "50%", border: "2px solid #F8F5F0", background: t.bg, color: t.color, display: "grid", placeItems: "center", fontFamily: "'Cormorant Garamond', serif", fontSize: 12, fontWeight: 500, marginLeft: i === 0 ? 0 : -8 }}>{t.initials}</div>
               ))}
             </div>
-            <span style={{ fontSize: 12, color: "#8A8078" }}><strong style={{ color: "#1A1A1A", fontWeight: 500 }}>The Ressom Family</strong> · 4 principals, 1 vision</span>
+            <span style={{ fontSize: 12, color: "#8A8078" }}><strong style={{ color: "#1A1A1A", fontWeight: 500 }}>The Property Team</strong> · X principals, 1 vision</span>
           </div>
         </div>
 
-        {/* RIGHT — CAROUSEL */}
+        {/* RIGHT — CATOUSEL */}
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
           <div style={{ position: "relative" }}>
             <Link href={p.href} style={{ textDecoration: "none", display: "block" }}>
@@ -289,7 +289,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STATS BAR */}
+      {/* STATS BAT */}
       <section style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", borderTop: "1px solid #EAE4DC", borderBottom: "1px solid #EAE4DC" }}>
         {stats.map((s, i) => (
           <div key={s.l} style={{ padding: "28px 44px", borderRight: i < 3 ? "1px solid #EAE4DC" : "none" }}>
@@ -299,7 +299,7 @@ export default function Home() {
         ))}
       </section>
 
-      {/* MARQUEE */}
+      {/* MATQUEE */}
       <div style={{ overflow: "hidden", borderBottom: "1px solid #EAE4DC", padding: "14px 0", background: "#F2EDE5" }}>
         <div className="marquee-track" style={{ display: "flex", gap: 48, whiteSpace: "nowrap", width: "max-content" }}>
           {[...locations, ...locations].map((loc, i) => (
@@ -315,7 +315,7 @@ export default function Home() {
       <section style={{ padding: "72px 44px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
           <div style={{ width: 24, height: 1, background: "#C4A882" }} />
-          <span style={{ fontSize: 11, letterSpacing: "0.14em", color: "#8A8078", textTransform: "uppercase" }}>Why Ressom</span>
+          <span style={{ fontSize: 11, letterSpacing: "0.14em", color: "#8A8078", textTransform: "uppercase" }}>Why This Template</span>
         </div>
         <h2 className="serif" style={{ fontSize: 38, fontWeight: 400, marginBottom: 36 }}>What sets us apart</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
@@ -374,10 +374,10 @@ export default function Home() {
             Our Story
           </div>
           <h2 className="serif" style={{ fontSize: 40, fontWeight: 400, color: "#F8F5F0", lineHeight: 1.1, marginBottom: 16 }}>
-            Built by family,<br /><em style={{ color: "#C4A882" }}>for families</em>
+            Built by experts,<br /><em style={{ color: "#C4A882" }}>for clients</em>
           </h2>
           <p style={{ fontSize: 14, color: "rgba(248,245,240,0.55)", lineHeight: 1.8, fontWeight: 300, marginBottom: 28 }}>
-            Since 2009, the Ressom family has been transforming Northern Virginia&apos;s landscape, one thoughtfully designed property at a time. Every development carries our name, and our reputation.
+            Since launch, the property team has been transforming Target Market&apos;s landscape, one thoughtfully designed property at a time. Every development carries our name, and our reputation.
           </p>
           <Link href="/team" style={{ fontSize: 13, fontWeight: 500, background: "#C4A882", color: "#1A1A1A", borderRadius: 10, padding: "13px 28px", textDecoration: "none", display: "inline-block" }}>Meet the Team</Link>
         </div>
@@ -419,14 +419,14 @@ export default function Home() {
             Let&apos;s find your<br /><em style={{ color: "#C4A882" }}>perfect property</em>
           </h2>
           <p style={{ fontSize: 14, color: "#8A8078", lineHeight: 1.7, maxWidth: 420, margin: "0 auto 32px", fontWeight: 300 }}>
-            Schedule a meeting with the Ressom family team. We&apos;ll walk you through every option personally, no middlemen, just family.
+            Schedule a meeting with the property team. We&apos;ll walk you through every option personally, no middlemen, just clarity.
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", alignItems: "center" }}>
             <a href="https://calendly.com/" target="_blank" rel="noopener noreferrer" style={{ fontSize: 13, fontWeight: 500, background: "transparent", color: "#1A1A1A", border: "1.5px solid #EAE4DC", borderRadius: 16, padding: "16px 32px", display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="1.8"><rect x="3" y="4" width="18" height="17" rx="2" /><path d="M8 2v4" /><path d="M16 2v4" /><path d="M3 9h18" /></svg>
               Calendly
             </a>
-            <a href="https://www.instagram.com/adamressom/" target="_blank" rel="noopener noreferrer" style={{ border: "1.5px solid #EAE4DC", borderRadius: 10, padding: "14px", display: "flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" style={{ border: "1.5px solid #EAE4DC", borderRadius: 10, padding: "14px", display: "flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17" cy="7" r="1.2" fill="#1A1A1A" stroke="none" /></svg>
             </a>
           </div>
@@ -436,10 +436,10 @@ export default function Home() {
       {/* FOOTER */}
       <footer style={{ padding: "24px 44px", borderTop: "1px solid #EAE4DC", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 11 }}>
-          <div style={{ width: 28, height: 28, borderRadius: 6, display: "flex", alignItems: "center", justifyContent: "center", background: "#1A1A1A", color: "#F8F5F0", fontFamily: "'Cormorant Garamond', serif", fontSize: 13, fontWeight: 600 }}>RP</div>
+          <div style={{ width: 28, height: 28, borderRadius: 6, display: "flex", alignItems: "center", justifyContent: "center", background: "#1A1A1A", color: "#F8F5F0", fontFamily: "'Cormorant Garamond', serif", fontSize: 13, fontWeight: 600 }}>PG</div>
           <div>
-            <div className="serif" style={{ fontSize: 15 }}>Ressom Properties</div>
-            <div style={{ fontSize: 11, color: "#8A8078", marginTop: 2 }}>© 2026 · Northern Virginia · Washington, D.C</div>
+            <div className="serif" style={{ fontSize: 15 }}>Property Group</div>
+            <div style={{ fontSize: 11, color: "#8A8078", marginTop: 2 }}>© 20XX · Target Market · Metro District</div>
           </div>
         </div>
         <div style={{ display: "flex", gap: 22, alignItems: "center" }}>
@@ -463,7 +463,7 @@ export default function Home() {
               {item.label}
             </Link>
           ))}
-          <a href="https://www.instagram.com/adamressom/" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8A8078" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17" cy="7" r="1.2" fill="#8A8078" stroke="none" /></svg>
           </a>
         </div>

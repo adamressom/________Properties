@@ -2,12 +2,12 @@ import Link from "next/link";
 
 export default function PropertiesPage() {
   const properties = [
-    { id: 1, image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80", title: "Ressom Estate at McLean", location: "McLean, VA", price: "$1,200,000", beds: 5, baths: 4, sqft: "4,200", type: "Luxury", status: "open", href: "/properties/ressom-estate-mclean" },
-    { id: 2, image: "https://photos.zillowstatic.com/fp/acc0ffea568e2900436a63032105f099-uncropped_scaled_within_1536_1152.webp", title: "Laurel Ridge Townhome", location: "Lorton, VA", price: "$4,080/mo", beds: 3, baths: 2, sqft: "1,800", type: "For Rent", status: "open", href: "/properties/laurel-ridge-townhome" },
-    { id: 3, image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80", title: "Waterfront Estate Concept", location: "Washington, D.C", price: "Coming Q2 2026", beds: 4, baths: 3, sqft: "3,900", type: "Mixed-Use", status: "closed", href: "/properties/waterfront-estate" },
-    { id: 4, image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80", title: "Suburban Family Home", location: "Fairfax, VA", price: "$735,000", beds: 4, baths: 3, sqft: "2,950", type: "Residential", status: "open", href: "/properties/suburban-family-home" },
-    { id: 5, image: "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=1200&q=80", title: "Mountain View Retreat", location: "Reston, VA", price: "$1,450,000", beds: 5, baths: 4, sqft: "4,850", type: "Luxury", status: "open", href: "/properties/mountain-view-retreat" },
-    { id: 6, image: "https://images.unsplash.com/photo-1600563438938-a9a27216b4f5?w=1200&q=80", title: "Urban Loft Residence", location: "Tysons, VA", price: "$890,000", beds: 2, baths: 2, sqft: "1,650", type: "Modern", status: "closed", href: "/properties/urban-loft-residence" },
+    { id: 1, image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80", title: "Example Estate", location: "Template City", price: "$X,XXX,XXX", beds: 5, baths: 4, sqft: "X,XXX", type: "Luxury", status: "open", href: "/properties/example-estate" },
+    { id: 2, image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80", title: "Sample Townhome", location: "Template City", price: "$X,XXX/mo", beds: 3, baths: 2, sqft: "X,XXX", type: "For Rent", status: "open", href: "/properties/laurel-ridge-townhome" },
+    { id: 3, image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80", title: "Waterfront Concept", location: "Metro District", price: "Coming Soon", beds: 4, baths: 3, sqft: "X,XXX", type: "Mixed-Use", status: "closed", href: "/properties/waterfront-estate" },
+    { id: 4, image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80", title: "Suburban Family Home", location: "Template County", price: "$XXX,XXX", beds: 4, baths: 3, sqft: "X,XXX", type: "Residential", status: "open", href: "/properties/suburban-family-home" },
+    { id: 5, image: "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=1200&q=80", title: "Mountain View Retreat", location: "Template City", price: "$X,XXX,XXX", beds: 5, baths: 4, sqft: "X,XXX", type: "Luxury", status: "open", href: "/properties/mountain-view-retreat" },
+    { id: 6, image: "https://images.unsplash.com/photo-1600563438938-a9a27216b4f5?w=1200&q=80", title: "Urban Loft Residence", location: "Template Center", price: "$XXX,XXX", beds: 2, baths: 2, sqft: "X,XXX", type: "Modern", status: "closed", href: "/properties/urban-loft-residence" },
   ];
 
   const navLinks = [
@@ -35,8 +35,8 @@ export default function PropertiesPage() {
 
       <nav style={{ display: "flex", alignItems: "center", padding: "20px 44px", background: "rgba(248,245,240,0.90)", backdropFilter: "blur(20px)", borderBottom: "1px solid #EAE4DC", position: "sticky", top: 0, zIndex: 100 }}>
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 11, textDecoration: "none", color: "inherit" }}>
-          <div style={{ width: 36, height: 36, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", background: "#1A1A1A", color: "#F8F5F0", fontFamily: "'Cormorant Garamond', serif", fontSize: 16, fontWeight: 600 }}>RP</div>
-          <span className="serif" style={{ fontSize: 18, fontWeight: 500, letterSpacing: "0.06em" }}>Ressom Properties</span>
+          <div style={{ width: 36, height: 36, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", background: "#1A1A1A", color: "#F8F5F0", fontFamily: "'Cormorant Garamond', serif", fontSize: 16, fontWeight: 600 }}>PG</div>
+          <span className="serif" style={{ fontSize: 18, fontWeight: 500, letterSpacing: "0.06em" }}>Property Group</span>
         </Link>
         <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 30 }}>
           {navLinks.map((l) => (
@@ -56,7 +56,7 @@ export default function PropertiesPage() {
           Explore our<br /><em style={{ color: "#C4A882" }}>current properties</em>
         </h1>
         <p style={{ maxWidth: 700, margin: "0 auto", fontSize: 15, color: "#8A8078", lineHeight: 1.85, fontWeight: 300 }}>
-          A curated portfolio of homes and developments across Northern Virginia, presented with the same thoughtful, family-led standard that defines Ressom Properties.
+          A curated portfolio of homes and developments across Target Market, presented with the same thoughtful, team-led standard that defines Property Group.
         </p>
       </section>
 

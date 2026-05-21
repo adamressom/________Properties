@@ -18,8 +18,8 @@ export default async function ContactPage() {
 
       <nav style={{ display: "flex", alignItems: "center", padding: "20px 44px", background: "rgba(248,245,240,0.90)", backdropFilter: "blur(20px)", borderBottom: "1px solid #EAE4DC", position: "sticky", top: 0, zIndex: 100 }}>
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 11, textDecoration: "none", color: "inherit" }}>
-          <div style={{ width: 36, height: 36, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", background: "#1A1A1A", color: "#F8F5F0", fontFamily: "'Cormorant Garamond', serif", fontSize: 16, fontWeight: 600 }}>RP</div>
-          <span className="serif" style={{ fontSize: 18, fontWeight: 500, letterSpacing: "0.06em" }}>Ressom Properties</span>
+          <div style={{ width: 36, height: 36, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", background: "#1A1A1A", color: "#F8F5F0", fontFamily: "'Cormorant Garamond', serif", fontSize: 16, fontWeight: 600 }}>PG</div>
+          <span className="serif" style={{ fontSize: 18, fontWeight: 500, letterSpacing: "0.06em" }}>Property Group</span>
         </Link>
         <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 30 }}>
           {[
@@ -43,7 +43,7 @@ export default async function ContactPage() {
         <div style={{ width: "100%", maxWidth: 760, textAlign: "center" }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: 24 }}>
             <div style={{ width: 28, height: 1, background: "#C4A882" }} />
-            <span style={{ fontSize: 11, fontWeight: 500, color: "#8A8078", letterSpacing: "0.14em", textTransform: "uppercase" }}>Contact Ressom Properties</span>
+            <span style={{ fontSize: 11, fontWeight: 500, color: "#8A8078", letterSpacing: "0.14em", textTransform: "uppercase" }}>Contact Property Group</span>
             <div style={{ width: 28, height: 1, background: "#C4A882" }} />
           </div>
 
@@ -52,14 +52,14 @@ export default async function ContactPage() {
           </h1>
 
           <p style={{ maxWidth: 560, margin: "0 auto 34px", fontSize: 16, lineHeight: 1.8, color: "#8A8078", fontWeight: 300 }}>
-            Reach out for property inquiries, partnerships, development conversations, or private consultations. We keep the experience direct, personal, and family-led.
+            Reach out for property inquiries, partnerships, development conversations, or private consultations. We keep the experience direct, personal, and team-led.
           </p>
 
           <div style={{ display: "flex", justifyContent: "center", gap: 14, flexWrap: "wrap", marginBottom: 54 }}>
-            <a href="mailto:adamressom@gmail.com" className="contact-btn" style={{ background: "transparent", color: "#1A1A1A", border: "1.5px solid #EAE4DC", borderRadius: 12, padding: "15px 18px", display: "flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
+            <a href="mailto:hello@example.com" className="contact-btn" style={{ background: "transparent", color: "#1A1A1A", border: "1.5px solid #EAE4DC", borderRadius: 12, padding: "15px 18px", display: "flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
             </a>
-            <a className="contact-btn" href="https://www.instagram.com/adamressom/" target="_blank" rel="noopener noreferrer" style={{ background: "transparent", color: "#1A1A1A", border: "1.5px solid #EAE4DC", borderRadius: 12, padding: "15px 18px", display: "inline-flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
+            <a className="contact-btn" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" style={{ background: "transparent", color: "#1A1A1A", border: "1.5px solid #EAE4DC", borderRadius: 12, padding: "15px 18px", display: "inline-flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17" cy="7" r="1.2" fill="#1A1A1A" stroke="none" /></svg>
             </a>
             <a className="contact-btn" href="https://calendly.com/" target="_blank" rel="noopener noreferrer" style={{ background: "transparent", color: "#1A1A1A", border: "1.5px solid #EAE4DC", borderRadius: 12, padding: "15px 26px", display: "inline-flex", alignItems: "center", gap: 10, textDecoration: "none", fontSize: 14, fontWeight: 500 }}>

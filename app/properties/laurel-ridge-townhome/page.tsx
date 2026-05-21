@@ -1,56 +1,56 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { useMutation, useQuery } from "convex/react";
+import { api } from "@/convex/_generated/api";
 import Link from "next/link";
 
 const images = [
-  "https://photos.zillowstatic.com/fp/6c2f8896921cc9410e711532777e190e-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/4f2e9d4305ff3e6dcc5fdd5673049035-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/41329f55c5597654915a4e5caeecc046-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/acc0ffea568e2900436a63032105f099-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/b1f6d0eb494bb3eda0507039933497fe-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/9e140421323730b82ba72fb6b3ccc174-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/af684e5e722cb9e214de0ee65bdb27b1-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/a9d39b7841509b0cbbb572f2f3302852-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/36157203a35f6c218487302cd4a9923d-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/abc0abed21cf9e19a2a99189bbdac9c6-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/c8c04e1c564d46a332cb9e5e5f5a82dc-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/800a01cc89c2a2339f95b321983a113f-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/b5e09ae1ed4ee8b6e8a13639d83850b5-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/c33262d02abcac04fd7146c1caad9786-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/cb417cec43c20eb2e91d7ecb4fd6664a-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/0189a8eec74eaa3f5aa13dc05659a638-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/fe437a9289076c128b218d2604301c23-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/5913c3a4c3d6455fa70a42df7da39fdd-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/d3165d9cc532a4f1c49f4521aa18a07c-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/7430bb49eb766ddb9b364fbedb5be7a6-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/bd3437f0f7ac30e9d483af9cb2e8dda4-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/b80a5d105db74a84503832a5fd02868f-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/47751a7a9d81f73f688afe21bad7e31a-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/c2bdd4cd2d0d938e21c4e259ca721ac1-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/c0a83e6dc84885e6ff11b11d7f4bfbb0-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/13c7b713b20a7ff86f39e0065ae15bc0-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/5fa3f1c6f40109b110fdf335466d7701-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/23475a04d10cbd3a1a1c48ff4648e696-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/de4a2d365e373a23fa8aa697f91fb1d0-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/5afeb484900bb019b0158947b8f1a028-uncropped_scaled_within_1536_1152.webp",
-  "https://photos.zillowstatic.com/fp/22f45fc62df940b277e92b12ad78275e-uncropped_scaled_within_1536_1152.webp",
+  "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1536&q=80",
+  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1536&q=80",
+  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1536&q=80",
+  "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=1536&q=80",
+  "https://images.unsplash.com/photo-1600563438938-a9a27216b4f5?w=1536&q=80",
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1536&q=80",
 ];
 
-export default function LaurelRidgePage() {
+export default function PropertyTemplatePage() {
   const [activeThumb, setActiveThumb] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-  const [isFaved, setIsFaved] = useState(false);
   const [showFavPopup, setShowFavPopup] = useState(false);
-  const isSignedIn = false;
+
+  // Temporary placeholder until the real WorkOS user ID is wired in.
+  const userId = "user_123";
+  const propertyId = "laurel-ridge-townhome";
+
+  const isFavorited = useQuery(api.favorites.isFavorited, {
+    userId,
+    propertyId,
+  });
+
+  const addFavorite = useMutation(api.favorites.add);
+  const removeFavorite = useMutation(api.favorites.remove);
+
   const thumbRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  function handleFav() {
-    if (!isSignedIn) {
+  async function handleFav() {
+    if (!userId || userId === "user_123") {
       setShowFavPopup(true);
       return;
     }
-    setIsFaved(!isFaved);
+
+    if (isFavorited) {
+      await removeFavorite({ userId, propertyId });
+    } else {
+      await addFavorite({
+        userId,
+        propertyId,
+        propertyName: "Sample Townhome",
+        propertyImage: images[0],
+        propertyPrice: "$X,XXX/mo",
+        propertyLocation: "Template City",
+      });
+    }
   }
 
   function openLightbox(index: number) {
@@ -166,12 +166,12 @@ export default function LaurelRidgePage() {
               borderRadius: 20,
               cursor: "pointer",
               border: "none",
-              background: isFaved ? "#E53935" : "#C4A882",
-              color: isFaved ? "#fff" : "#1A1A1A",
+              background: isFavorited ? "#E53935" : "#C4A882",
+              color: isFavorited ? "#fff" : "#1A1A1A",
               fontFamily: "'Outfit', sans-serif",
             }}
           >
-            {isFaved ? "♥ Saved" : "♡ Save"}
+            {isFavorited ? "♥ Saved" : "♡ Save"}
           </button>
         </div>
       </nav>
@@ -291,7 +291,7 @@ export default function LaurelRidgePage() {
               fontSize: 20,
             }}
           >
-            {isFaved ? "❤️" : "🤍"}
+            {isFavorited ? "❤️" : "🤍"}
           </button>
 
           <button
@@ -402,7 +402,7 @@ export default function LaurelRidgePage() {
                 marginBottom: 8,
               }}
             >
-              Laurel Ridge Townhome
+              Sample Townhome
             </div>
 
             <div
@@ -416,7 +416,7 @@ export default function LaurelRidgePage() {
                 lineHeight: 1.45,
               }}
             >
-              📍 9249 Laurel Ridge Crossing Rd, Lorton, VA 22079
+              📍 123 Example Street, Template City, ST 00000
             </div>
 
             <div
@@ -440,13 +440,13 @@ export default function LaurelRidgePage() {
                 For Rent
               </div>
               <div style={{ fontSize: 42, fontWeight: 600, lineHeight: 1 }}>
-                $4,080
+                $X,XXX
                 <span style={{ fontSize: 24, fontWeight: 400 }}>/mo</span>
               </div>
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
-              {[{ v: "4", l: "Beds" }, { v: "3.5", l: "Baths" }, { v: "2,220", l: "Sq Ft" }].map((s) => (
+              {[{ v: "4", l: "Beds" }, { v: "3.5", l: "Baths" }, { v: "X,XXX", l: "Sq Ft" }].map((s) => (
                 <div
                   key={s.l}
                   style={{
@@ -485,14 +485,14 @@ export default function LaurelRidgePage() {
             </div>
 
             {[
-              ["Year Built", "2006"],
-              ["Lot Size", "0.04 acres"],
-              ["HOA Fees", "$120/mo"],
+              ["Year Built", "20XX"],
+              ["Lot Size", "X.XX acres"],
+              ["HOA Fees", "$XXX/mo"],
               ["Parking", "2-car garage"],
               ["Heating", "Forced air"],
               ["Cooling", "Central AC"],
               ["Type", "End-unit townhouse"],
-              ["County", "Fairfax County"],
+              ["County", "Template County"],
             ].map(([k, v], i, arr) => (
               <div
                 key={k}
@@ -582,7 +582,7 @@ export default function LaurelRidgePage() {
                 lineHeight: 1.6,
               }}
             >
-              Schedule a private tour with the Ressom team
+              Schedule a private tour with the property team
             </div>
             <a
               href="https://calendly.com"
@@ -632,13 +632,13 @@ export default function LaurelRidgePage() {
               }}
             >
               Welcome to this exceptional end-unit townhouse nestled in the
-              sought-after South County School Pyramid in Lorton, VA. Spanning
-              three levels and 2,220 sq ft of refined living space, this home
+              sought-after local school district in Template City. Spanning
+              three levels and X,XXX sq ft of refined living space, this home
               blends modern elegance with everyday comfort. The gourmet kitchen
               features gleaming granite countertops, upgraded cabinetry, and
               stainless steel appliances. A dedicated home office and sunroom
-              add versatility. Enjoy seamless connectivity to Route 123, I-95,
-              Fort Belvoir, and Lorton VRE — all just minutes away.
+              add versatility. Enjoy seamless connectivity to local highways,
+              Major employment center, and commuter rail — all just minutes away.
             </p>
           </div>
 
@@ -659,8 +659,8 @@ export default function LaurelRidgePage() {
                 { icon: "🍳", val: "Gourmet Kitchen", lbl: "Granite counters" },
                 { icon: "☀️", val: "Sunroom", lbl: "Natural light" },
                 { icon: "📚", val: "Home Office", lbl: "Library/Study" },
-                { icon: "🚇", val: "VRE Access", lbl: "Lorton Station" },
-                { icon: "🛡️", val: "Fort Belvoir", lbl: "5 min drive" },
+                { icon: "🚇", val: "Transit Access", lbl: "Central Station" },
+                { icon: "🛡️", val: "Major employment center", lbl: "Minutes away" },
               ].map((h) => (
                 <div
                   key={h.val}
@@ -695,12 +695,12 @@ export default function LaurelRidgePage() {
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               {[
-                { date: "Saturday, Apr 19", time: "12:00 PM – 3:00 PM" },
-                { date: "Sunday, Apr 20", time: "1:00 PM – 4:00 PM" },
-                { date: "Saturday, Apr 26", time: "11:00 AM – 2:00 PM" },
-              ].map((o) => (
+                { date: "Saturday, Month Day", time: "Time TBD" },
+                { date: "Sunday, Month Day", time: "Time TBD" },
+                { date: "Saturday, Month Day", time: "Time TBD" },
+              ].map((o, index) => (
                 <div
-                  key={o.date}
+                  key={`${o.date}-${index}`}
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
@@ -770,24 +770,24 @@ export default function LaurelRidgePage() {
                   flexShrink: 0,
                 }}
               >
-                AR
+                AT
               </div>
 
               <div style={{ flex: 1 }}>
-                <div style={{ fontSize: 13, fontWeight: 600 }}>Adam Ressom</div>
+                <div style={{ fontSize: 13, fontWeight: 600 }}>Alex Taylor</div>
                 <div style={{ fontSize: 11, color: "#8A8078", marginTop: 2 }}>
-                  Ressom Properties
+                  Property Group
                 </div>
                 <div style={{ fontSize: 11, color: "#8A8078", marginTop: 6 }}>
-                  (703) 555-0148
+                  (555) 010-0005
                 </div>
                 <div style={{ fontSize: 11, color: "#8A8078" }}>
-                  adam@ressomproperties.com
+                  agent@example.com
                 </div>
               </div>
 
               <a
-                href="mailto:adam@ressomproperties.com"
+                href="mailto:agent@example.com"
                 style={{
                   fontSize: 12,
                   fontWeight: 600,
@@ -947,23 +947,25 @@ export default function LaurelRidgePage() {
               notified about new properties.
             </p>
 
-            <button
-              style={{
-                width: "100%",
-                fontSize: 13,
-                fontWeight: 500,
-                background: "#1A1A1A",
-                color: "#F8F5F0",
-                border: "none",
-                borderRadius: 12,
-                padding: 13,
-                cursor: "pointer",
-                marginBottom: 8,
-                fontFamily: "'Outfit', sans-serif",
-              }}
-            >
-              Sign In / Create Account
-            </button>
+            <Link href="/auth/login" style={{ textDecoration: "none" }}>
+              <button
+                style={{
+                  width: "100%",
+                  fontSize: 13,
+                  fontWeight: 500,
+                  background: "#1A1A1A",
+                  color: "#F8F5F0",
+                  border: "none",
+                  borderRadius: 12,
+                  padding: 13,
+                  cursor: "pointer",
+                  marginBottom: 8,
+                  fontFamily: "'Outfit', sans-serif",
+                }}
+              >
+                Sign In / Create Account
+              </button>
+            </Link>
 
             <button
               onClick={() => setShowFavPopup(false)}
