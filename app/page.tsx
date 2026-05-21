@@ -34,7 +34,7 @@ const featuredProperties = [
     href: "/properties/suburban-family-home",
   },
   {
-    image: "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80",
     badge: "Luxury · Featured",
     status: "open",
     loc: "Template City",
@@ -86,9 +86,9 @@ export default function Home() {
   ];
 
   const team = [
-    { initials: "JL", name: "Jordan Lee", role: "Property Owner", bg: "#4A3F35", color: "#C4A882", phone: "+1 (555) 010-0001", email: "founder@example.com", linkedin: "https://www.linkedin.com/", instagram: "https://www.instagram.com/" },
-    { initials: "CM", name: "Casey Morgan", role: "Property Owner", bg: "#354A47", color: "#82C4B8", phone: "+1 (555) 010-0002", email: "operations@example.com", linkedin: null, instagram: null },
-    { initials: "RP", name: "Riley Patel", role: "Property Owner", bg: "#3A354A", color: "#A882C4", phone: "+1 (555) 010-0003", email: "partner@example.com", linkedin: null, instagram: null },
+    { initials: "JL", name: "Jordan Lee", role: "Property Owner", bg: "#4A3F35", color: "#C4A882", phone: "+1 (555) 010-0001", email: "founder@example.com", linkedin: "https://www.linkedin.com/" },
+    { initials: "CM", name: "Casey Morgan", role: "Property Owner", bg: "#354A47", color: "#82C4B8", phone: "+1 (555) 010-0002", email: "operations@example.com", linkedin: "https://www.linkedin.com/" },
+    { initials: "RP", name: "Riley Patel", role: "Property Owner", bg: "#3A354A", color: "#A882C4", phone: "+1 (555) 010-0003", email: "partner@example.com", linkedin: "https://www.linkedin.com/" },
   ];
 
   const locations = ["Template Borough", "Template Harbor", "Template County", "Northeast District", "Template Station", "Southeast District", "Northwest District"];
@@ -396,16 +396,9 @@ export default function Home() {
                 <a href={"mailto:" + t.email} className="icon-btn" title="Email">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(248,245,240,0.6)" strokeWidth="1.8"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg>
                 </a>
-                {t.linkedin && (
-                  <a href={t.linkedin} target="_blank" rel="noreferrer" className="icon-btn" title="LinkedIn">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(248,245,240,0.6)" strokeWidth="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
-                  </a>
-                )}
-                {t.instagram && (
-                  <a href={t.instagram} target="_blank" rel="noreferrer" className="icon-btn" title="Instagram">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(248,245,240,0.6)" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17" cy="7" r="1.2" fill="rgba(248,245,240,0.6)" stroke="none" /></svg>
-                  </a>
-                )}
+                <a href={t.linkedin} target="_blank" rel="noreferrer" className="icon-btn" title="LinkedIn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(248,245,240,0.6)" strokeWidth="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
+                </a>
               </div>
             </div>
           ))}

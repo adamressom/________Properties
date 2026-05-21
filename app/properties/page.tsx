@@ -6,7 +6,7 @@ export default function PropertiesPage() {
     { id: 2, image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80", title: "Sample Townhome", location: "Template City", price: "$X,XXX/mo", beds: 3, baths: 2, sqft: "X,XXX", type: "For Rent", status: "open", href: "/properties/laurel-ridge-townhome" },
     { id: 3, image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80", title: "Waterfront Concept", location: "Metro District", price: "Coming Soon", beds: 4, baths: 3, sqft: "X,XXX", type: "Mixed-Use", status: "closed", href: "/properties/waterfront-estate" },
     { id: 4, image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80", title: "Suburban Family Home", location: "Template County", price: "$XXX,XXX", beds: 4, baths: 3, sqft: "X,XXX", type: "Residential", status: "open", href: "/properties/suburban-family-home" },
-    { id: 5, image: "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=1200&q=80", title: "Mountain View Retreat", location: "Template City", price: "$X,XXX,XXX", beds: 5, baths: 4, sqft: "X,XXX", type: "Luxury", status: "open", href: "/properties/mountain-view-retreat" },
+    { id: 5, image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80", title: "Mountain View Retreat", location: "Template City", price: "$X,XXX,XXX", beds: 5, baths: 4, sqft: "X,XXX", type: "Luxury", status: "open", href: "/properties/mountain-view-retreat" },
     { id: 6, image: "https://images.unsplash.com/photo-1600563438938-a9a27216b4f5?w=1200&q=80", title: "Urban Loft Residence", location: "Template Center", price: "$XXX,XXX", beds: 2, baths: 2, sqft: "X,XXX", type: "Modern", status: "closed", href: "/properties/urban-loft-residence" },
   ];
 

@@ -1,9 +1,13 @@
 import { mutation, query } from "./_generated/server";
 import { v } from "convex/values";
+import {
+  cleanHttpsUrl,
+  cleanText,
+  requireUser,
+} from "./security";
 
 export const add = mutation({
   args: {
-    userId: v.string(),
     propertyId: v.string(),
     propertyName: v.string(),
     propertyImage: v.string(),
@@ -11,29 +15,41 @@ export const add = mutation({
     propertyLocation: v.string(),
   },
   handler: async (ctx, args) => {
-    // Check if already favourited
+    const identity = await requireUser(ctx);
+    const userId = identity.tokenIdentifier;
+    const propertyId = cleanText(args.propertyId, "Property ID", 100);
+
     const existing = await ctx.db
       .query("favorites")
-      .withIndex("by_user", (q) => q.eq("userId", args.userId))
-      .filter((q) => q.eq(q.field("propertyId"), args.propertyId))
+      .withIndex("by_user", (q) => q.eq("userId", userId))
+      .filter((q) => q.eq(q.field("propertyId"), propertyId))
       .first();
 
     if (existing) return existing._id;
 
     return await ctx.db.insert("favorites", {
-      ...args,
+      userId,
+      propertyId,
+      propertyName: cleanText(args.propertyName, "Property name", 120),
+      propertyImage: cleanHttpsUrl(args.propertyImage, "Property image"),
+      propertyPrice: cleanText(args.propertyPrice, "Property price", 60),
+      propertyLocation: cleanText(args.propertyLocation, "Property location", 160),
       savedAt: Date.now(),
     });
   },
 });
 
 export const remove = mutation({
-  args: { userId: v.string(), propertyId: v.string() },
+  args: { propertyId: v.string() },
   handler: async (ctx, args) => {
+    const identity = await requireUser(ctx);
+    const userId = identity.tokenIdentifier;
+    const propertyId = cleanText(args.propertyId, "Property ID", 100);
+
     const existing = await ctx.db
       .query("favorites")
-      .withIndex("by_user", (q) => q.eq("userId", args.userId))
-      .filter((q) => q.eq(q.field("propertyId"), args.propertyId))
+      .withIndex("by_user", (q) => q.eq("userId", userId))
+      .filter((q) => q.eq(q.field("propertyId"), propertyId))
       .first();
 
     if (existing) await ctx.db.delete(existing._id);
@@ -41,22 +57,28 @@ export const remove = mutation({
 });
 
 export const getByUser = query({
-  args: { userId: v.string() },
-  handler: async (ctx, args) => {
+  args: {},
+  handler: async (ctx) => {
+    const identity = await requireUser(ctx);
+
     return await ctx.db
       .query("favorites")
-      .withIndex("by_user", (q) => q.eq("userId", args.userId))
+      .withIndex("by_user", (q) => q.eq("userId", identity.tokenIdentifier))
       .collect();
   },
 });
 
 export const isFavorited = query({
-  args: { userId: v.string(), propertyId: v.string() },
+  args: { propertyId: v.string() },
   handler: async (ctx, args) => {
+    const identity = await ctx.auth.getUserIdentity();
+    if (identity === null) return false;
+
+    const propertyId = cleanText(args.propertyId, "Property ID", 100);
     const existing = await ctx.db
       .query("favorites")
-      .withIndex("by_user", (q) => q.eq("userId", args.userId))
-      .filter((q) => q.eq(q.field("propertyId"), args.propertyId))
+      .withIndex("by_user", (q) => q.eq("userId", identity.tokenIdentifier))
+      .filter((q) => q.eq(q.field("propertyId"), propertyId))
       .first();
     return !!existing;
   },

@@ -93,11 +93,11 @@ const propertyPages = {
     beds: "5",
     baths: "4",
     sqft: "X,XXX",
-    hero: "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=1536&q=80",
+    hero: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1536&q=80",
     images: [
-      "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=1536&q=80",
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1536&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1536&q=80",
+      "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1536&q=80",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1536&q=80",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1536&q=80",
     ],
     details: [
       ["Year Built", "20XX"],

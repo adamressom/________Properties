@@ -26,10 +26,10 @@ export default function TeamPage() {
   const [popup, setPopup] = useState<ContactPopup>(null);
 
   const team = [
-    { id: 1, initials: "CM", name: "Casey Morgan", role: "Property Owner · Metro & Target Market", tone: "#F3F4F6", bio: "Leads development execution, construction oversight, and project planning across the team portfolio.", phone: "+1 (555) 010-0002", email: "operations@example.com", linkedin: null, instagram: null },
-    { id: 2, initials: "RP", name: "Riley Patel", role: "Property Owner · Metro", tone: "#F3F4F6", bio: "Supports buyers, clients, and partners with a direct, personal experience from first inquiry to final decision.", phone: "+1 (555) 010-0003", email: "partner@example.com", linkedin: null, instagram: null },
-    { id: 3, initials: "JL", name: "Jordan Lee", role: "Property Owner · Metro & Target Market", tone: "#F3F4F6", bio: "Guides the long-term team vision behind Property Group, with a focus on trust, legacy, and high-standard development.", phone: "+1 (555) 010-0001", email: "founder@example.com", linkedin: "https://www.linkedin.com/", instagram: "https://www.instagram.com/" },
-    { id: 4, initials: "AT", name: "Alex Taylor", role: "Software Engineer", tone: "#F3F4F6", bio: "Built and maintains the Property Group platform — designing the digital experience that connects clients with their next home.", phone: "+1 (555) 010-0004", email: "hello@example.com", linkedin: "https://www.linkedin.com/", instagram: "https://www.instagram.com/" },
+    { id: 1, initials: "CM", name: "Casey Morgan", role: "Property Owner · Metro & Target Market", tone: "#F3F4F6", bio: "Leads development execution, construction oversight, and project planning across the team portfolio.", phone: "+1 (555) 010-0002", email: "operations@example.com", linkedin: "https://www.linkedin.com/" },
+    { id: 2, initials: "RP", name: "Riley Patel", role: "Property Owner · Metro", tone: "#F3F4F6", bio: "Supports buyers, clients, and partners with a direct, personal experience from first inquiry to final decision.", phone: "+1 (555) 010-0003", email: "partner@example.com", linkedin: "https://www.linkedin.com/" },
+    { id: 3, initials: "JL", name: "Jordan Lee", role: "Property Owner · Metro & Target Market", tone: "#F3F4F6", bio: "Guides the long-term team vision behind Property Group, with a focus on trust, legacy, and high-standard development.", phone: "+1 (555) 010-0001", email: "founder@example.com", linkedin: "https://www.linkedin.com/" },
+    { id: 4, initials: "AT", name: "Alex Taylor", role: "Software Engineer", tone: "#F3F4F6", bio: "Built and maintains the Property Group platform — designing the digital experience that connects clients with their next home.", phone: "+1 (555) 010-0004", email: "hello@example.com", linkedin: "https://www.linkedin.com/" },
   ];
 
   const navLinks = [
@@ -117,16 +117,9 @@ export default function TeamPage() {
                   <a href={"mailto:" + member.email} className="icon-btn" title={"Email " + member.name}>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" strokeWidth="1.8"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg>
                   </a>
-                  {member.linkedin && (
-                    <a href={member.linkedin} target="_blank" rel="noreferrer" className="icon-btn" title={member.name + " on LinkedIn"}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" strokeWidth="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
-                    </a>
-                  )}
-                  {member.instagram && (
-                    <a href={member.instagram} target="_blank" rel="noreferrer" className="icon-btn" title={member.name + " on Instagram"}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17" cy="7" r="1.2" fill="#374151" stroke="none" /></svg>
-                    </a>
-                  )}
+                  <a href={member.linkedin} target="_blank" rel="noreferrer" className="icon-btn" title={member.name + " on LinkedIn"}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" strokeWidth="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
+                  </a>
                 </div>
               </div>
             </div>

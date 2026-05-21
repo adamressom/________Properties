@@ -19,12 +19,9 @@ export default function PropertyTemplatePage() {
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [showFavPopup, setShowFavPopup] = useState(false);
 
-  // Temporary placeholder until the real WorkOS user ID is wired in.
-  const userId = "user_123";
   const propertyId = "laurel-ridge-townhome";
 
   const isFavorited = useQuery(api.favorites.isFavorited, {
-    userId,
     propertyId,
   });
 
@@ -34,22 +31,20 @@ export default function PropertyTemplatePage() {
   const thumbRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   async function handleFav() {
-    if (!userId || userId === "user_123") {
+    try {
+      if (isFavorited) {
+        await removeFavorite({ propertyId });
+      } else {
+        await addFavorite({
+          propertyId,
+          propertyName: "Sample Townhome",
+          propertyImage: images[0],
+          propertyPrice: "$X,XXX/mo",
+          propertyLocation: "Template City",
+        });
+      }
+    } catch {
       setShowFavPopup(true);
-      return;
-    }
-
-    if (isFavorited) {
-      await removeFavorite({ userId, propertyId });
-    } else {
-      await addFavorite({
-        userId,
-        propertyId,
-        propertyName: "Sample Townhome",
-        propertyImage: images[0],
-        propertyPrice: "$X,XXX/mo",
-        propertyLocation: "Template City",
-      });
     }
   }
 

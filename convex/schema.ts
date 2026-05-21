@@ -51,4 +51,12 @@ export default defineSchema({
     createdAt: v.number(),
   }).index("by_slug", ["slug"]).index("by_featured", ["featured"]),
 
+  // Simple server-side throttles for public write paths.
+  rateLimits: defineTable({
+    key: v.string(),
+    windowStart: v.number(),
+    count: v.number(),
+    updatedAt: v.number(),
+  }).index("by_key", ["key"]),
+
 });
