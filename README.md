@@ -99,3 +99,9 @@ public/       # Static assets
 This project is designed to deploy on Vercel. After connecting your repo, add all environment variables from `.env.local` to your Vercel project settings, then deploy.
 
 For Convex, run `npx convex deploy` to push your backend to production before or alongside your frontend deployment.
+
+---
+
+## Author
+
+Created by [Adam Ressom](https://github.com/adamressom)
